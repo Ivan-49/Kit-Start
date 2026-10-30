@@ -11,3 +11,6 @@
 *.tmp
 .tmp/
 .cache/
+
+# Zome bag fix
+*:Zone.Identifier
