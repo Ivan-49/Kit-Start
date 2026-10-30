@@ -12,5 +12,7 @@ PROFILE_MODULES=(
     terminal
     fonts
     python
+    nodejs
+    pyright
     neovim
 )

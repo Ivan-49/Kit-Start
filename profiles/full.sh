@@ -16,6 +16,7 @@ PROFILE_MODULES=(
     fonts
     python
     nodejs
+    pyright
     cpp
     docker
     database
