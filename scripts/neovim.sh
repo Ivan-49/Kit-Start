@@ -2,7 +2,7 @@
 
 install_neovim() {
     local config_dir="$HOME/.config/nvim"
-    local repo="https://github.com/Ivan-49/nvim.git"
+    local repo="git@github.com:Ivan-49/nvim.git"
 
     log_info "Installing Neovim"
     install_packages neovim
