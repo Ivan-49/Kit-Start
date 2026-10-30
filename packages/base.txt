@@ -1,25 +1,16 @@
-# Base dependencies
-
+# Shared command-line and repository prerequisites
 ca-certificates
 curl
 wget
-
 git
 git-lfs
-
 gnupg
 openssh-client
 rsync
-
 file
-
-
 unzip
-
 zip
 tar
 gzip
 xz-utils
-
 software-properties-common
-apt-transport-https

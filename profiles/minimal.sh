@@ -4,11 +4,11 @@ PROFILE_PACKAGE_FILES=(
 )
 
 PROFILE_MODULES=(
-
     system
     git
     zsh
     ohmyzsh
     terminal
     fonts
+    neovim
 )

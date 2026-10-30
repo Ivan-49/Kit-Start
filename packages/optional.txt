@@ -1,5 +1,0 @@
-# Optional development tools
-
-shellcheck
-shfmt
-gh

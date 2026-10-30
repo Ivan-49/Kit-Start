@@ -1,0 +1,2 @@
+# Keep ShellCheck strict while allowing source paths resolved at runtime.
+shell=bash

@@ -1,17 +1,10 @@
-# Network tools
-
-
+# Network diagnostics and command-line HTTP tools
+net-tools
 iproute2
 dnsutils
-
 nmap
-
 tcpdump
-
 mtr-tiny
-
 traceroute
-
-
 httpie
 netcat-openbsd

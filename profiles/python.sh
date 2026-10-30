@@ -4,16 +4,13 @@ PROFILE_PACKAGE_FILES=(
     python.txt
 )
 
-
 PROFILE_MODULES=(
     system
     git
-
     zsh
     ohmyzsh
     terminal
     fonts
     python
-
     neovim
 )

@@ -1,60 +1,35 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+install_system() {
+    local -a required=(tree btop htop ncdu jq lsof tmux screen)
+    local cmd
+    local -a missing=()
 
-source "$(dirname "${BASH_SOURCE[0]}")/lib/common.sh"
-source "$(dirname "${BASH_SOURCE[0]}")/lib/packages.sh"
+    # eza is a useful enhancement, but not present in every supported Ubuntu
+    # release. fd and bat have Ubuntu-specific executable names.
+    install_if_available eza
 
-log_info "Installing additional system utilities"
+    if command -v fdfind >/dev/null 2>&1 &&
+       ! command -v fd >/dev/null 2>&1; then
+        mkdir -p "$HOME/.local/bin"
+        ln -sf "$(command -v fdfind)" "$HOME/.local/bin/fd"
+    fi
 
-# Packages that are available in standard Ubuntu repositories.
-install_packages 
-    tree 
+    if command -v batcat >/dev/null 2>&1 &&
+       ! command -v bat >/dev/null 2>&1; then
+        mkdir -p "$HOME/.local/bin"
+        ln -sf "$(command -v batcat)" "$HOME/.local/bin/bat"
+    fi
 
-    btop 
-    htop 
+    if [[ "$KIT_START_DRY_RUN" == "1" ]]; then
+        log_info "[DRY-RUN] System utilities will be verified after installation"
+        return 0
+    fi
 
-    ncdu 
-    bat 
-    ripgrep 
-    fzf 
-    zoxide 
-    jq 
-    tldr 
-    lsof 
-    tmux 
-    screen 
-    rsync 
+    for cmd in "${required[@]}"; do
+        command -v "$cmd" >/dev/null 2>&1 || missing+=("$cmd")
+    done
+    ((${#missing[@]} == 0)) || die "Missing system utilities: ${missing[*]}"
 
-    curl 
-    wget 
-    unzip 
-    zip 
-
-    p7zip-full 
-    xz-utils 
-    gzip 
-    gnupg 
-    ca-certificates 
-    man-db 
-
-    openssh-client 
-    net-tools 
-    iproute2 
-    dnsutils 
-    nmap 
-    tcpdump 
-    mtr-tiny 
-    traceroute 
-    httpie 
-    netcat-openbsd 
-    shellcheck 
-    shfmt 
-    git-lfs
-
-
-# Optional packages: absence must not interrupt installation.
-install_if_available eza
-install_if_available fd-find
-
-log_success "Additional system utilities installed"
+    log_success "System utilities are ready"
+}

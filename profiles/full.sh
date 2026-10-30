@@ -3,10 +3,8 @@ PROFILE_PACKAGE_FILES=(
     terminal.txt
     python.txt
     cpp.txt
-    backend.txt
     database.txt
     networking.txt
-    optional.txt
 )
 
 PROFILE_MODULES=(
@@ -18,7 +16,6 @@ PROFILE_MODULES=(
     fonts
     python
     nodejs
-
     cpp
     docker
     database

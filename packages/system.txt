@@ -1,20 +1,11 @@
-# System utilities
-
-
+# General system utilities
 tree
-
-htop
 btop
-
-screen
-tmux
-
+htop
+ncdu
 jq
 lsof
-ncdu
-
+tmux
+screen
 man-db
-
 manpages
-
-net-tools

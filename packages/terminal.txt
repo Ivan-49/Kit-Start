@@ -1,13 +1,8 @@
-# Terminal and shell
-
+# Shell and terminal tools
 zsh
-
 fzf
 zoxide
-
-
 ripgrep
 fd-find
 bat
-
 fontconfig

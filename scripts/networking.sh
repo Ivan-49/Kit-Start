@@ -1,17 +1,19 @@
 #!/usr/bin/env bash
 
 install_networking() {
-
     if [[ "$KIT_START_DRY_RUN" == "1" ]]; then
-        log_info "[DRY-RUN] Network tools verification skipped"
+        log_info "[DRY-RUN] Network utilities verification skipped"
         return 0
     fi
 
-    command -v curl >/dev/null ||
-        die "curl is not installed"
+    local cmd
+    local -a required=(curl ip ss dig nmap tcpdump mtr traceroute http nc)
+    local -a missing=()
 
-    command -v ip >/dev/null ||
-        die "iproute2 is not installed"
+    for cmd in "${required[@]}"; do
+        command -v "$cmd" >/dev/null 2>&1 || missing+=("$cmd")
+    done
 
-    log_success "Networking tools ready"
+    ((${#missing[@]} == 0)) || die "Missing network utilities: ${missing[*]}"
+    log_success "Networking utilities are ready"
 }

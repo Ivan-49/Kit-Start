@@ -1,10 +1,5 @@
-# Database clients only
-
-
+# Database clients only; no database server packages
 postgresql-client
-
 redis-tools
-
-
 sqlite3
 libsqlite3-dev

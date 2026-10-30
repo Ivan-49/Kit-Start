@@ -1,12 +1,6 @@
 #!/usr/bin/env bash
 
-
 install_zsh() {
-
-
-    if ! command -v zsh >/dev/null 2>&1; then
-        install_packages zsh
-    fi
-
+    command -v zsh >/dev/null 2>&1 || install_packages zsh
     log_success "Zsh is available"
 }
