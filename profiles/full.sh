@@ -1,0 +1,29 @@
+PROFILE_PACKAGE_FILES=(
+    system.txt
+    terminal.txt
+    python.txt
+    cpp.txt
+    backend.txt
+    database.txt
+    networking.txt
+    optional.txt
+)
+
+PROFILE_MODULES=(
+    system
+    git
+    zsh
+    ohmyzsh
+    terminal
+    fonts
+    python
+    nodejs
+
+    cpp
+    docker
+    database
+    networking
+    neovim
+    gui
+    optional
+)

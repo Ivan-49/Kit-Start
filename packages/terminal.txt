@@ -1,0 +1,13 @@
+# Terminal and shell
+
+zsh
+
+fzf
+zoxide
+
+
+ripgrep
+fd-find
+bat
+
+fontconfig

@@ -1,0 +1,10 @@
+# Database clients only
+
+
+postgresql-client
+
+redis-tools
+
+
+sqlite3
+libsqlite3-dev

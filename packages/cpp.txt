@@ -1,0 +1,23 @@
+# C and C++ development
+
+build-essential
+
+gcc
+g++
+
+
+clang
+
+gdb
+
+cmake
+ninja-build
+make
+
+clang-format
+
+clang-tidy
+
+
+valgrind
+pkg-config

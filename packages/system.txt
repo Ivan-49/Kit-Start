@@ -1,0 +1,20 @@
+# System utilities
+
+
+tree
+
+htop
+btop
+
+screen
+tmux
+
+jq
+lsof
+ncdu
+
+man-db
+
+manpages
+
+net-tools
